@@ -8,8 +8,8 @@ console.log(grigliaElement, playBtnElement, level);
 
 // .....................................................................................................IMPOSTO LE DIMENSIONI DELLA GRIGLIA
 // .....................................................................................................
-// let gridSize = 10;
-// let griCell = gridSize * gridSize;
+let gridSize = 10;
+let gridCell = gridSize * gridSize;
 
 // .....................................................................................................APERTURA addEventListener su BOTTONE PLAY
 // .....................................................................................................
@@ -20,8 +20,8 @@ playBtnElement.addEventListener("click", function () {
 
   // .....................................................................................................CICLO LE CELLE CON FOR PER CREARE LA GRIGLIA SUL DOM
   // ..............................................................................
-  let celle = gridCellComposition();
-  for (let i = 0; i < celle; i++) {
+  // let celle = gridCellComposition();
+  for (let i = 0; i < gridCell; i++) {
     let index = i + 1;
     console.log(index);
     let cellElement = document.createElement("div");
@@ -50,22 +50,32 @@ playBtnElement.addEventListener("click", function () {
 // .....................................................................................................FUNZIONI
 // .....................................................................................................
 
-function gridCellComposition() {
-  let gridCell = 0;
-  let gridSize;
-  if (level.value === 1) {
-    gridSize = 10;
-    griCell = gridSize ** 2;
-    console.log(level.value);
-  } else if (level.value === 2) {
-    gridSize = 9;
-    griCell = gridSize ** 2;
-    console.log(level.value);
-  } else if (level.value === 3) {
-    gridSize = 7;
-    griCell = gridSize ** 2;
-    console.log(level.value);
-  }
-  // let griCell = gridSize ** 2;
-  return griCell;
+// function gridCellComposition() {
+//   let gridCell = 0;
+//   let gridSize;
+//   if (level.value === 1) {
+//     gridSize = 10;
+//     griCell = gridSize ** 2;
+//     console.log(level.value);
+//   } else if (level.value === 2) {
+//     gridSize = 9;
+//     griCell = gridSize ** 2;
+//     console.log(level.value);
+//   } else if (level.value === 3) {
+//     gridSize = 7;
+//     griCell = gridSize ** 2;
+//     console.log(level.value);
+//   }
+//   // let griCell = gridSize ** 2;
+//   return griCell;
+// }
+// .....................................................................................................CREO GRIGLIA BOMBE
+// .....................................................................................................
+let bombe = [];
+// while (Bombe.length <= 16) {
+let bomb = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+console.log(bomb);
+if (bombe.includes(bomb) === false) {
+  bombe.push(bomb);
 }
+console.log(bombe);
