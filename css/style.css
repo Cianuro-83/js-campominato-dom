@@ -1,0 +1,47 @@
+/* **************************
+GENERAL AND RESET RULES
+************************** */
+body {
+  background-color: black;
+  color: white;
+}
+/* **************************
+GRIGLIA
+************************** */
+#play-button,
+#empty-button {
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+}
+#play-button:hover,
+#empty-button:hover {
+  color: #fbc107;
+  background-color: red;
+  border: 4px solid blue;
+}
+#griglia {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#griglia > .cella {
+  aspect-ratio: 1/1;
+  border: 2px solid greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#griglia > .cella.on-click {
+  background-color: #fbc107;
+  color: red;
+  cursor: default;
+}
+.scb-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
