@@ -42,17 +42,23 @@ playBtnElement.addEventListener("click", function () {
     // AGGIUNGO COMPORTAMENTO AL CLICK DELLA SINGOLA CELLA
 
     cellElement.addEventListener("click", function () {
-      for (let i = 0; i < lose.length; i++) {
-        if (index === parseInt(lose[i])) {
+      for (let i = 0; i < celle2; i++) {
+        if (index === lose[i]) {
           cellElement.classList.add("bomb");
-          cellElement.innerHTML = "0";
+          // grigliaElement.innerHTML = "";
         } else {
           cellElement.innerHTML = "+1";
           cellElement.classList.add("on-click");
         }
       }
       // console.log("Hai cliccato sulla cella " + index);
-      // console.log(index);
+      console.log(
+        index,
+        celle,
+        parseInt(lose),
+        // celle2 - parseInt(lose),
+        lose.lenght
+      );
       // cellElement.classList.add("bomb");
       // cellElement.innerHTML = "+1";
     });
