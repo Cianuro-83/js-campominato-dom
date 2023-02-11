@@ -36,12 +36,22 @@ GRIGLIA
 }
 
 #griglia > .cella.on-click {
-  background-color: #fbc107;
-  color: red;
+  background-image: url(../img/giphy.gif);
   cursor: default;
+  background-size: cover;
+  background-position: center;
+  color: red;
 }
 .scb-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#griglia > .cella.bomb {
+  background-image: url(../img/bomb-joypixels.gif);
+  cursor: default;
+  background-size: cover;
+  background-position: center;
+  color: red;
 }
