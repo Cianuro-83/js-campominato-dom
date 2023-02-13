@@ -91,7 +91,6 @@ playBtnElement.addEventListener("click", function () {
     return Math.random() - 0.5;
   });
   console.log(casualBomb);
-
   //********************
   // CICLO LE CELLE CON FOR PER CREARE LA GRIGLIA SUL DOM
   //******************** */
@@ -105,11 +104,12 @@ playBtnElement.addEventListener("click", function () {
     grigliaElement.append(cellElement);
     cellElement.style["width"] = `calc(100% / ${playGround})`;
     cellElement.innerHTML = index;
+
     //********************
     // EVENT LISTENER SULLE CELLE
     //******************** */
     cellElement.addEventListener("click", function (event) {
-      click(cellElement);
+      click(cellElement, unioneArray);
       // CHIUSURA EVENT LISTENER SULLE CELLE
     });
     // CHIUSURA CICLO FOR PER CREARE LA GRIGLIA
@@ -121,19 +121,22 @@ playBtnElement.addEventListener("click", function () {
 //---------------------------------------------------------------------------
 // FUNZIONE: COMPOPRTAMENTO AL CLICK SULLA CELLA (TESTATA E FUNZIONANTE)
 //---------------------------------------------------------------------------
-function click(cellElement) {
+function click(cellElement, unioneArray) {
   if (cellElement.classList.contains("bomb")) {
     console.log("GAME OVER... SEI MORTO ED I TUOI RESTI SPARSI NEL WEB");
     cellElement.classList.add("explosion");
     grigliaElement.innerHTML = "";
     gameOverElement.classList.remove("d-none");
   } else if (cellElement.classList.contains("on-click")) {
-    let total = [];
-    cellElement.innerHTML = "+1";
-    total.push(cellElement.innerHTML);
-
-    cellElement.classList.add("alive");
+    let counter = cellElement.id;
+    {
+      if (cellElement.classList.contains("on-click")) {
+        let score = parseInt(counter) + parseInt(cellElement.id);
+        console.log(score);
+        let totale = [];
+        totale.push(score);
+        console.log(totale);
+      }
+    }
   }
-
-  // fine della funzione COMPOPRTAMENTO AL CLICK SULLA CELLA
 }
