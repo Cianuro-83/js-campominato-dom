@@ -10,8 +10,9 @@ let cellElement;
 let celle = [];
 console.log(celle);
 let prova = document.getElementById("prova");
-
+let score = 0;
 let gameOverElement = document.getElementById("end-game");
+let punteggioElement = document.getElementById("score");
 console.log(grigliaElement, playBtnElement, level, gameOverElement);
 
 //********************
@@ -128,15 +129,19 @@ function click(cellElement, unioneArray) {
     grigliaElement.innerHTML = "";
     gameOverElement.classList.remove("d-none");
   } else if (cellElement.classList.contains("on-click")) {
-    let counter = cellElement.id;
-    {
-      if (cellElement.classList.contains("on-click")) {
-        let score = parseInt(counter) + parseInt(cellElement.id);
-        console.log(score);
-        let totale = [];
-        totale.push(score);
-        console.log(totale);
-      }
+    cellElement.classList.add("alive");
+    score++;
+    punteggioElement.innerHTML = score;
+    console.log(score);
+    let num;
+    if (parseInt(level.value) === 1) {
+      num = 100;
+    } else if (parseInt(level.value) === 2) {
+      num = 81;
+    } else if (parseInt(level.value) === 3) {
+      num = 49;
     }
+
+    console.log(totale);
   }
 }
