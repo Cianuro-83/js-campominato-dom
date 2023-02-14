@@ -2,6 +2,7 @@
 GENERAL AND RESET RULES
 ************************** */
 body {
+  background-image: url(../img/ImmaculateRedAnnashummingbird-max-1mb.gif);
   background-color: black;
   color: white;
 }
@@ -44,7 +45,6 @@ GRIGLIA
   cursor: default;
   background-size: cover;
   background-position: center;
-  color: red;
 }
 .scb-btn {
   display: flex;
@@ -57,7 +57,6 @@ GRIGLIA
   cursor: default;
   background-size: cover;
   background-position: center;
-  color: red;
 }
 
 #griglia > .cella.explosion {

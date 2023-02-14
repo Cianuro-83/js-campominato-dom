@@ -10,16 +10,18 @@ let cellElement;
 let celle = [];
 console.log(celle);
 let prova = document.getElementById("prova");
+let counterElement = document.getElementById("counter");
 
 let gameOverElement = document.getElementById("end-game");
 console.log(grigliaElement, playBtnElement, level, gameOverElement);
-
+let counter = 0;
 //********************
 // APERTURA addEventListener su BOTTONE PLAY
 //******************** */
 
 playBtnElement.addEventListener("click", function () {
   grigliaElement.innerHTML = "";
+  counterElement.innerHTML = "YOUR SCORE IS " + 0;
   gameOverElement.classList.add("d-none");
   console.log("INIZIO GIOCO");
 
@@ -125,13 +127,14 @@ function click(cellElement) {
   if (cellElement.classList.contains("bomb")) {
     console.log("GAME OVER... SEI MORTO ED I TUOI RESTI SPARSI NEL WEB");
     cellElement.classList.add("explosion");
-    grigliaElement.innerHTML = "";
-    gameOverElement.classList.remove("d-none");
+    setTimeout(function () {
+      cellElement.classList.add("explosion");
+      grigliaElement.innerHTML = "";
+      gameOverElement.classList.remove("d-none");
+    }, 1000);
   } else if (cellElement.classList.contains("on-click")) {
-    let total = [];
-    cellElement.innerHTML = "+1";
-    total.push(cellElement.innerHTML);
-
+    counter++;
+    counterElement.innerHTML = "YOUR SCORE IS= " + counter;
     cellElement.classList.add("alive");
   }
 
